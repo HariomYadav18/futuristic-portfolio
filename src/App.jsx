@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import About from "./About";
-import Projects from "./Projects";
-import Contact from "./Contact";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
 import Footer from "./Footer";
 
 const sections = [
   { id: "home", label: "Home", icon: "fas fa-house" },
   { id: "about", label: "About", icon: "fas fa-user-astronaut" },
+  { id: "education", label: "Education", icon: "fas fa-graduation-cap" },
+  { id: "skills", label: "Skills", icon: "fas fa-file-code" },
   { id: "projects", label: "Projects", icon: "fas fa-laptop-code" },
   { id: "contact", label: "Contact", icon: "fas fa-paper-plane" },
 ];
@@ -22,6 +26,10 @@ function App() {
         return <Home />;
       case "about":
         return <About />;
+      case "education":
+        return <Education />;
+      case "skills":
+        return <Skills />;
       case "projects":
         return <Projects />;
       case "contact":

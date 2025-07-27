@@ -1,89 +1,203 @@
-// Navbar active button
+// Navbar active button - with error handling
 const aEls = document.querySelectorAll("nav ul li a");
+let navbarEventListeners = new Set();
 
 aEls.forEach((aEl) => {
-  aEl.addEventListener("click", () => {
-    document.querySelector(".active").classList.remove("active");
-    aEl.classList.add("active");
-  });
-});
-
-// Hamburger
-const menuEl = document.querySelector("#hamburger");
-const navEL = document.querySelector("header nav");
-
-menuEl.addEventListener("click", () => {
-  menuEl.classList.toggle("fa-times");
-  navEL.classList.toggle("checked");
-});
-
-// Text Typing
-var typed = new Typed(".text-type", {
-  strings: [
-    "Web Developer",
-    "Java Developer",
-    "Programmer",
-    "Open Source Contributor",
-    "Blogger",
-    "Youtuber",
-  ],
-  typeSpeed: 100,
-  // backSpeed: 150,
-  loop: true,
-});
-
-//   Projects filtering
-const btnEls = document.querySelectorAll("#projects .menu .btn");
-const projectBoxEls = document.querySelectorAll(".project-box");
-
-btnEls.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    document.querySelector(".activeProject").classList.remove("activeProject");
-    btn.classList.add("activeProject");
-
-    const name = e.target.dataset.name;
-    console.log(name);
-
-    projectBoxEls.forEach((itemEl) => {
-      if (name === "all") {
-        itemEl.style.display = "block";
-      } else {
-        if (itemEl.classList.contains(name)) {
-          console.log("came");
-          itemEl.style.display = "block";
-        } else {
-          itemEl.style.display = "none";
-        }
+  const handler = (e) => {
+    try {
+      const currentActive = document.querySelector(".active");
+      if (currentActive) {
+        currentActive.classList.remove("active");
       }
+      aEl.classList.add("active");
+    } catch (error) {
+      console.error("Error in navbar active button: ", error);
+    }
+  };
+  navbarEventListeners.add(handler);
+  aEl.addEventListener("click", handler);
+});
+
+// Cleanup function for navbar
+const cleanupNavbar = () => {
+  aEls.forEach((aEl) => {
+    navbarEventListeners.forEach((handler) => {
+      aEl.removeEventListener("click", handler);
     });
   });
-});
+};
 
-// Disabling Inspect Element
-// document.onkeydown = function (e) {
-//   if (event.keyCode == 123) {
-//     return false;
-//   }
-//   if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)) {
-//     return false;
-//   }
-//   if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)) {
-//     return false;
-//   }
-//   if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)) {
-//     return false;
-//   }
-//   if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {
-//     return false;
-//   }
-// };
+// Hamburger - with error handling
+const menuEl = document.querySelector("#hamburger");
+const navEL = document.querySelector("header nav");
+let hamburgerEventListeners = new Set();
+
+if (menuEl && navEL) {
+  const handler = () => {
+    navEL.classList.toggle("checked");
+    menuEl.classList.toggle("fa-bars");
+    menuEl.classList.toggle("fa-times");
+  };
+  hamburgerEventListeners.add(handler);
+  menuEl.addEventListener("click", handler);
+} else {
+  console.error("Hamburger menu elements not found");
+}
+
+// Cleanup function for hamburger
+const cleanupHamburger = () => {
+  if (menuEl) {
+    hamburgerEventListeners.forEach((handler) => {
+      menuEl.removeEventListener("click", handler);
+    });
+  }
+};
+
+// Text Typing - with error handling
+let typedInstance = null;
+try {
+  const textTypeElement = document.querySelector(".text-type");
+  if (textTypeElement) {
+    typedInstance = new Typed(textTypeElement, {
+      strings: [
+        "Web Developer",
+        "Java Developer",
+        "Programmer",
+        "Open Source Contributor",
+        "Blogger",
+        "Youtuber",
+      ],
+      typeSpeed: 100,
+      loop: true,
+    });
+  } else {
+    console.error("Text type element not found");
+  }
+} catch (error) {
+  console.error("Error in text typing: ", error);
+}
+
+// Cleanup function for typed.js
+const cleanupTyped = () => {
+  if (typedInstance) {
+    typedInstance.destroy();
+  }
+};
+
+// Projects filtering - with error handling
+let projectsEventListeners = new Set();
+try {
+  const btnEls = document.querySelectorAll("#projects .menu .btn");
+  const projectBoxEls = document.querySelectorAll(".project-box");
+
+  if (btnEls.length && projectBoxEls.length) {
+    btnEls.forEach((btn) => {
+      const handler = (e) => {
+        try {
+          const currentActive = document.querySelector(".activeProject");
+          if (currentActive) {
+            currentActive.classList.remove("activeProject");
+          }
+          btn.classList.add("activeProject");
+
+          const name = e.target.dataset.name;
+          projectBoxEls.forEach((itemEl) => {
+            if (itemEl.dataset.name === name || name === "all") {
+              itemEl.style.display = "block";
+            } else {
+              itemEl.style.display = "none";
+            }
+          });
+        } catch (error) {
+          console.error("Error in projects filtering: ", error);
+        }
+      };
+      projectsEventListeners.add(handler);
+      btn.addEventListener("click", handler);
+    });
+  }
+} catch (error) {
+  console.error("Error in projects filtering setup: ", error);
+}
+
+// Cleanup function for projects
+const cleanupProjects = () => {
+  btnEls.forEach((btn) => {
+    projectsEventListeners.forEach((handler) => {
+      btn.removeEventListener("click", handler);
+    });
+  });
+};
+
+try {
+  const contactForm = document.querySelector('form[name="contact"]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          body: JSON.stringify(Object.fromEntries(formData)),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to submit form');
+        }
+
+        // Reset form
+        contactForm.reset();
+        alert('Message sent successfully!');
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('Failed to send message. Please try again later.');
+      }
+    });
+  }
+} catch (error) {
+  console.error('Error setting up form submission:', error);
+}
 
 // Scroll to Top
 const scrollToTopEl = document.querySelector(".scrollToTop");
+let scrollEventListeners = new Set();
 
 function goToTop() {
   window.scrollTo(0, 0);
 }
+
+// Add event listener for scroll to top
+if (scrollToTopEl) {
+  const handler = () => {
+    goToTop();
+  };
+  scrollEventListeners.add(handler);
+  scrollToTopEl.addEventListener("click", handler);
+}
+
+// Cleanup function for scroll to top
+const cleanupScrollToTop = () => {
+  if (scrollToTopEl) {
+    scrollEventListeners.forEach((handler) => {
+      scrollToTopEl.removeEventListener("click", handler);
+    });
+  }
+};
+
+// Main cleanup function
+const cleanupAll = () => {
+  cleanupNavbar();
+  cleanupHamburger();
+  cleanupTyped();
+  cleanupProjects();
+  cleanupScrollToTop();
+};
+
+// Add cleanup on window unload
+window.addEventListener("unload", cleanupAll);
 
 window.onscroll = () => {
   if (window.scrollY > 100) {

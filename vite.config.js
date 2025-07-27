@@ -4,6 +4,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  root: path.resolve(__dirname),
   plugins: [react()],
   build: {
     outDir: 'dist',
@@ -14,7 +15,8 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html')
       }
-    }
+    },
+    manifest: true
   },
   resolve: {
     alias: {
@@ -27,6 +29,10 @@ export default defineConfig({
         require('tailwindcss'),
         require('autoprefixer')
       ]
+    },
+    modules: {
+      localsConvention: 'camelCase',
+      generateScopedName: '[name]__[local]__[hash:base64:5]'
     }
   }
 })

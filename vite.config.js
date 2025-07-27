@@ -8,6 +8,24 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: true,
-    minify: true
+    minify: true,
+    rollupOptions: {
+      input: {
+        main: './index.html'
+      }
+    }
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  },
+  css: {
+    postcss: {
+      plugins: [
+        require('tailwindcss'),
+        require('autoprefixer')
+      ]
+    }
   }
 })

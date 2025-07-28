@@ -24,12 +24,6 @@ export default defineConfig({
     }
   },
   css: {
-    postcss: {
-      plugins: [
-        require('tailwindcss'),
-        require('autoprefixer')
-      ]
-    },
     modules: {
       localsConvention: 'camelCase',
       generateScopedName: '[name]__[local]__[hash:base64:5]'

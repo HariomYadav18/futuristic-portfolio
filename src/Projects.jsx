@@ -29,7 +29,7 @@ const Projects = () => {
         <div className="absolute top-1/3 left-1/2 w-80 h-80 bg-[#00fff7]/20 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-[#00fff7]/10 rounded-full blur-2xl animate-pulse-slow" />
       </div>
-      <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center">
+      <div className="relative z-10 w-full flex flex-col items-center">
         <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-10 tracking-wider neon-glow">My <span className="text-[#00fff7]">Projects</span></h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full">
           {projects.map((project, idx) => (

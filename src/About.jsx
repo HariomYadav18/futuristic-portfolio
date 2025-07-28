@@ -27,7 +27,7 @@ const About = () => {
         <div className="absolute bottom-0 right-1/3 w-60 h-60 bg-[#00fff7]/10 rounded-full blur-2xl animate-pulse-slow" />
       </div>
       {/* Glass Card */}
-      <div className="relative z-10 w-full max-w-3xl mx-auto p-10 bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-[#00fff7]/30 neon-glow animate-float-up flex flex-col gap-8">
+      <div className="relative z-10 w-full p-10 bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-[#00fff7]/30 neon-glow animate-float-up flex flex-col gap-8">
         <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-4 tracking-wider neon-glow">About <span className="text-[#00fff7]">Me</span></h2>
         <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
           {aboutData.map((item, idx) => (

@@ -16,7 +16,7 @@ const Home = () => {
         <div className="absolute top-0 right-1/4 w-40 h-40 bg-[#1e90ff]/40 rounded-full blur-2xl animate-pulse" />
       </div>
       {/* Holographic Avatar Card */}
-      <div className="relative z-10 flex flex-col items-center gap-8 p-10 bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-[#1e90ff]/40 neon-glow-blue animate-float-up max-w-2xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center gap-8 p-10 bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-[#1e90ff]/40 neon-glow-blue animate-float-up w-full">
         <div className="relative flex flex-col items-center">
           <div className="w-44 h-44 rounded-full border-4 border-[#1e90ff] shadow-xl neon-glow-blue overflow-hidden bg-gradient-to-br from-[#1e90ff]/40 to-[#232526] animate-avatar-float">
             <img

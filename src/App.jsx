@@ -40,13 +40,15 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen w-full flex bg-gradient-to-br from-[#232526] via-[#0f2027] to-[#2c5364] relative overflow-hidden">
-      {/* Floating Sidebar */}
-      <aside className="fixed left-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-6 bg-white/10 backdrop-blur-2xl rounded-2xl shadow-2xl border border-[#00fff7]/30 neon-glow p-4 animate-float-in">
+    <div className="min-h-screen w-full relative">
+      {/* Futuristic Gradient Background */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-[#6a11cb] via-[#2575fc] to-[#ff6a88]" />
+      {/* Floating Sidebar Overlay */}
+      <aside className="fixed left-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-6 bg-white/10 backdrop-blur-2xl rounded-2xl shadow-2xl border border-[#ff6a88]/30 neon-glow p-4 animate-float-in" style={{height: 'auto', minHeight: '320px'}}>
         {sections.map((section) => (
           <button
             key={section.id}
-            className={`flex flex-col items-center gap-1 text-white text-xl hover:text-[#00fff7] transition-all duration-300 focus:outline-none ${activeSection === section.id ? "text-[#00fff7] scale-110" : "opacity-70"}`}
+            className={`flex flex-col items-center gap-1 text-white text-xl hover:text-[#ff6a88] transition-all duration-300 focus:outline-none ${activeSection === section.id ? "text-[#ff6a88] scale-110" : "opacity-70"}`}
             onClick={() => setActiveSection(section.id)}
             aria-label={section.label}
           >
@@ -56,8 +58,8 @@ function App() {
         ))}
       </aside>
       {/* Main Content Area */}
-      <main className="flex-1 w-full ml-28 md:ml-40 px-4 py-8 transition-all duration-700">
-        <div className="w-full max-w-5xl mx-auto rounded-3xl shadow-2xl bg-white/5 backdrop-blur-2xl border border-[#00fff7]/10 p-0 md:p-8 animate-section-in">
+      <main className="flex-1 w-full px-4 py-8 transition-all duration-700 md:ml-32">
+        <div className="w-full max-w-5xl mx-auto rounded-3xl shadow-2xl bg-white/10 backdrop-blur-2xl border border-[#ff6a88]/10 p-0 md:p-8 animate-section-in">
           {renderSection()}
         </div>
         <Footer />
@@ -78,7 +80,7 @@ function App() {
           animation: section-in 1.2s cubic-bezier(0.23, 1, 0.32, 1);
         }
         .neon-glow {
-          filter: drop-shadow(0 0 8px #00fff7) drop-shadow(0 0 16px #00fff7);
+          filter: drop-shadow(0 0 8px #ff6a88) drop-shadow(0 0 16px #ff6a88);
         }
       `}</style>
     </div>

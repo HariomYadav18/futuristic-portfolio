@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-[70vh] py-12 overflow-hidden">
+    <section className="relative w-full py-16 px-4 overflow-visible">
       {/* Animated 3D/Neon Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@ const Home = () => {
         <div className="absolute top-0 right-1/4 w-40 h-40 bg-[#1e90ff]/40 rounded-full blur-2xl animate-pulse" />
       </div>
       {/* Holographic Avatar Card */}
-      <div className="relative z-10 flex flex-col items-center gap-8 p-10 bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-[#1e90ff]/40 neon-glow-blue animate-float-up max-w-xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center gap-8 p-10 bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-[#1e90ff]/40 neon-glow-blue animate-float-up max-w-2xl mx-auto">
         <div className="relative flex flex-col items-center">
           <div className="w-44 h-44 rounded-full border-4 border-[#1e90ff] shadow-xl neon-glow-blue overflow-hidden bg-gradient-to-br from-[#1e90ff]/40 to-[#232526] animate-avatar-float">
             <img
@@ -31,7 +31,7 @@ const Home = () => {
         <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg text-center tracking-tight animate-title-glow-blue">
           <span className="block text-[#1e90ff]">Welcome</span> to the <span className="text-[#1e90ff]">Next-Gen</span> Portfolio
         </h1>
-        <p className="text-xl md:text-2xl text-white/80 font-medium text-center max-w-lg animate-fade-in">
+        <p className="text-lg md:text-2xl text-white/80 font-medium text-center max-w-xl animate-fade-in leading-relaxed">
           Hi, I'm <span className="font-bold text-[#1e90ff]">Hariom Yadav</span>.<br />
           I build <span className="font-bold text-[#1e90ff]">immersive</span>, <span className="font-bold text-[#1e90ff]">interactive</span> digital experiences.<br />
           <span className="text-[#1e90ff] font-bold">Scroll or use the sidebar to explore!</span>

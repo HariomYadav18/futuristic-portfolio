@@ -56,7 +56,7 @@ function App() {
         ))}
       </aside>
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col items-center justify-center ml-28 md:ml-40 px-4 py-8 transition-all duration-700">
+      <main className="flex-1 w-full ml-28 md:ml-40 px-4 py-8 transition-all duration-700">
         <div className="w-full max-w-5xl mx-auto rounded-3xl shadow-2xl bg-white/5 backdrop-blur-2xl border border-[#00fff7]/10 p-0 md:p-8 animate-section-in">
           {renderSection()}
         </div>

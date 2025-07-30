@@ -1,35 +1,62 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: '',
   });
-
   const [submitting, setSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    setSuccess(false);
+    setMessageSent(false);
 
     try {
-      // Here you would typically make an API call to send the form data
-      // For now, we'll just simulate the submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setSuccess(true);
-      setFormData({ name: '', email: '', message: '' });
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: 'service_0000000',
+          template_id: 'template_0000000',
+          user_id: 'user_0000000',
+          template_params: {
+            from_name: formData.name,
+            from_email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      setMessageSent(true);
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
     } catch (error) {
       console.error('Error submitting form:', error);
     } finally {
-      setIsSubmitting(false);
+      setSubmitting(false);
     }
   };
 
@@ -114,36 +141,24 @@ const Contact = () => {
               className="px-4 py-3 h-40 bg-white/5 rounded-lg border border-white/10 hover:border-[#1e90ff]/20 focus:border-[#1e90ff] focus:ring-2 focus:ring-[#1e90ff]/30 text-white placeholder-white/50 outline-none transition-all duration-300 resize-none"
               required
             />
-              <a href="https://github.com/HariomYadav18" target="_blank" rel="noopener noreferrer" className="text-[#00fff7] hover:text-white transition-colors duration-300">
-                <i className="fa-brands fa-github"></i>
-              </a>
-            </div>
-          </div>
-        </form>
 
-        {/* Social Icons */}
-        <div className="flex justify-center gap-6 mt-8">
-          <a
-            href="https://www.instagram.com/_hariom_18/?hl=en"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl text-[#00fff7] hover:text-white transition-colors duration-300 neon-glow"
-          >
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/hariom-yadav-066548251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl text-[#00fff7] hover:text-white transition-colors duration-300 neon-glow"
-          >
-            <i className="fab fa-linkedin"></i>
-          </a>
+            <button
+              type="submit"
+              className="w-full py-3 bg-[#1e90ff] hover:bg-[#1e90ff]/90 text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#1e90ff]/30"
+              disabled={submitting}
+            >
+              {submitting ? (
+                <>
+                  <i className="fa-solid fa-spinner animate-spin mr-2"></i>
+                  Sending...
+                </>
+              ) : (
+                'Send Message'
+              )}
+            </button>
+          </form>
         </div>
       </div>
-
-      <style>{`
-        @keyframes float-up {
           0% { opacity: 0; transform: translateY(40px) scale(0.95); }
           100% { opacity: 1; transform: translateY(0) scale(1); }
         }

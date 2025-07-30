@@ -40,21 +40,26 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen w-full relative">
-      {/* Futuristic Gradient Background */}
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-[#6a11cb] via-[#2575fc] to-[#ff6a88]" />
-      {/* Top Navigation Bar */}
-      <nav className="w-full flex justify-center gap-8 bg-white/10 backdrop-blur-2xl shadow-2xl border-b border-[#ff6a88]/30 neon-glow py-4 animate-float-in sticky top-0 z-50">
+    <div className="min-h-screen w-screen relative overflow-x-hidden">
+      {/* Full-screen Background */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-[#121212] to-[#1e1e1e]" />
+      {/* Navigation */}
+      <Navbar />
+      <nav className="flex justify-center gap-4 p-4">
         {sections.map((section) => (
-          <button
+          <a
             key={section.id}
-            className={`flex flex-col items-center gap-1 text-white text-lg hover:text-[#ff6a88] transition-all duration-300 focus:outline-none ${activeSection === section.id ? "text-[#ff6a88] scale-110" : "opacity-70"}`}
+            className={`px-4 py-2 rounded-lg transition-all duration-300 ${
+              activeSection === section.id
+                ? 'bg-white/20 text-white'
+                : 'hover:bg-white/10'
+            }`}
+            href={`#${section.id}`}
             onClick={() => setActiveSection(section.id)}
             aria-label={section.label}
           >
-            <i className={`${section.icon} neon-glow`}></i>
-            <span className="text-xs font-bold tracking-wider">{section.label}</span>
-          </button>
+            <i className={section.icon} /> {section.label}
+          </a>
         ))}
       </nav>
       {/* Main Content Area */}

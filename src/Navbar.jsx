@@ -98,7 +98,7 @@ const Navbar = () => {
           filter: drop-shadow(0 0 8px #00fff7) drop-shadow(0 0 16px #00fff7);
         }
       `}</style>
-    </header>
+    </nav>
   );
 };
 

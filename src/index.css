@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Lucida Console', 'Courier New', monospace;
+  line-height: 1.4;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -36,8 +36,9 @@ main {
   flex: 1;
   width: 100%;
   max-width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   box-sizing: border-box;
+  margin: 0;
 }
 
 h1 {

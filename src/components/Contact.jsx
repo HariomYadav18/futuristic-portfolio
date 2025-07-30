@@ -81,14 +81,14 @@ const Contact = () => {
               <i className="fa-solid fa-phone text-2xl text-[#00fff7]" />
               <div>
                 <h3 className="text-xl font-bold text-white mb-1">Phone</h3>
-                <p className="text-white/80">+91 88279 00431</p>
+                <p className="text-white/80">+91 9353887316</p>
               </div>
             </div>
             <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:bg-[#1e90ff]/10 transition-all duration-300">
               <i className="fa-solid fa-envelope text-2xl text-[#00fff7]" />
               <div>
                 <h3 className="text-xl font-bold text-white mb-1">Email</h3>
-                <p className="text-white/80">hariom18yadav@gmail.com</p>
+                <p className="text-white/80">hariomydv1844@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:bg-[#1e90ff]/10 transition-all duration-300">

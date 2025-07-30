@@ -9,7 +9,7 @@ const aboutData = [
   {
     icon: "fas fa-graduation-cap",
     title: "Education",
-    desc: "B.Tech in CSE at VIT Bhopal University with CGPA: 8.66. Also completed Class 12th from Narayana Junior College with GPA: 7.78 and Class 10th from Delhi Public School, Bangalore North with GPA: 9.3.",
+    desc: "B.Tech in CSE at VIT Bhopal University with CGPA: 8.66. Also completed Class 12th from Narayana Junior College with 77.8% and Class 10th from Delhi Public School, Bangalore North with 92.8%.",
   },
   {
     icon: "fas fa-trophy",

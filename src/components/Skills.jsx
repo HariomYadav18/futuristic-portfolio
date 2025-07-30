@@ -15,16 +15,48 @@ const Skills = () => {
       name: 'JavaScript',
     },
     {
-      icon: 'https://img.icons8.com/?size=48&id=71257&format=png',
-      name: 'SQL',
+      icon: 'https://img.icons8.com/color/48/000000/html-5--v1.png',
+      name: 'HTML5',
     },
     {
-      icon: 'https://img.icons8.com/?size=80&id=z2gsPTsahvBW&format=png',
-      name: 'DotNet',
+      icon: 'https://img.icons8.com/color/48/000000/css3.png',
+      name: 'CSS3',
     },
     {
-      icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/48px-Tailwind_CSS_Logo.png',
-      name: 'TailwindCSS',
+      icon: 'https://img.icons8.com/color/48/000000/nodejs.png',
+      name: 'Node.js',
+    },
+    {
+      icon: 'https://img.icons8.com/color/48/000000/mongodb.png',
+      name: 'MongoDB',
+    },
+    {
+      icon: 'https://img.icons8.com/color/48/000000/express.png',
+      name: 'Express.js',
+    },
+    {
+      icon: 'https://img.icons8.com/color/48/000000/mysql-logo.png',
+      name: 'MySQL',
+    },
+    {
+      icon: 'https://img.icons8.com/color/48/000000/spring-logo.png',
+      name: 'Spring Boot',
+    },
+    {
+      icon: 'https://img.icons8.com/color/48/000000/firebase.png',
+      name: 'Firebase',
+    },
+    {
+      icon: 'https://img.icons8.com/color/48/000000/stripe.png',
+      name: 'Stripe',
+    },
+    {
+      icon: 'https://img.icons8.com/color/48/000000/auth0.png',
+      name: 'Auth0',
+    },
+    {
+      icon: 'https://img.icons8.com/color/48/000000/git.png',
+      name: 'Git',
     },
   ];
 

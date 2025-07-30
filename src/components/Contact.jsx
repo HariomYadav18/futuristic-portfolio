@@ -45,55 +45,85 @@ const Contact = () => {
         <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-10 tracking-wider neon-glow">
           <i className="fa-solid fa-headset mr-2"></i>Contact Me
         </h2>
+        <div className="text-center text-white/80 mb-6">
+          <p>Feel free to get in touch with me for any inquiries or collaboration opportunities!</p>
+          <div className="mt-4 space-y-2">
+            <div className="flex items-center justify-center">
+              <i className="fa-solid fa-envelope mr-2"></i>
+              <span>hariom18yadav@gmail.com</span>
+            </div>
+            <div className="flex items-center justify-center">
+              <i className="fa-solid fa-phone mr-2"></i>
+              <span>+91 93100 93100</span>
+            </div>
+          </div>
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
+              <label htmlFor="name" className="block text-white mb-2">Your Name</label>
               <input
                 type="text"
+                id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Your Name"
+                className="w-full px-4 py-2 rounded-lg border border-[#00fff7]/30 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#00fff7] focus:border-transparent"
+                placeholder="Enter your name"
                 required
-                className="w-full px-4 py-3 rounded-xl bg-white/20 border border-[#00fff7]/30 text-white placeholder-[#00fff7]/60 focus:outline-none focus:ring-2 focus:ring-[#00fff7] transition-all duration-300"
               />
             </div>
             <div>
+              <label htmlFor="email" className="block text-white mb-2">Your Email</label>
               <input
                 type="email"
+                id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Your Email"
+                className="w-full px-4 py-2 rounded-lg border border-[#00fff7]/30 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#00fff7] focus:border-transparent"
+                placeholder="Enter your email"
                 required
-                className="w-full px-4 py-3 rounded-xl bg-white/20 border border-[#00fff7]/30 text-white placeholder-[#00fff7]/60 focus:outline-none focus:ring-2 focus:ring-[#00fff7] transition-all duration-300"
               />
             </div>
           </div>
-
           <div>
+            <label htmlFor="message" className="block text-white mb-2">Your Message</label>
             <textarea
+              id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Your Message"
-              rows={4}
+              className="w-full px-4 py-2 rounded-lg border border-[#00fff7]/30 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#00fff7] focus:border-transparent"
+              placeholder="Write your message here..."
+              rows="4"
               required
-              className="w-full px-4 py-3 rounded-xl bg-white/20 border border-[#00fff7]/30 text-white placeholder-[#00fff7]/60 focus:outline-none focus:ring-2 focus:ring-[#00fff7] transition-all duration-300"
             />
           </div>
-
           <button
             type="submit"
-            disabled={submitting}
-            className={`w-full px-8 py-3 rounded-full bg-[#00fff7] text-[#232526] font-bold shadow-lg neon-glow transition-all duration-300 ${
-              submitting ? 'opacity-50 cursor-not-allowed' : ''
-            }`}
+            disabled={submitting || success}
+            className="w-full py-3 bg-[#00fff7] hover:bg-[#00fff7]/90 text-black rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {submitting ? 'Sending...' : success ? 'Sent!' : 'Send Message'}
-            <i className="fa-solid fa-paper-plane ml-2"></i>
+            {submitting ? 'Sending...' : success ? 'Message Sent!' : 'Send Message'}
           </button>
+          <div className="mt-4 text-center">
+            <p className="text-white/80">
+              Or connect with me on social media:
+            </p>
+            <div className="flex justify-center gap-4 mt-2">
+              <a href="https://www.instagram.com/_hariom_18/?hl=en" target="_blank" rel="noopener noreferrer" className="text-[#00fff7] hover:text-white transition-colors duration-300">
+                <i className="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/hariom-yadav-066548251" target="_blank" rel="noopener noreferrer" className="text-[#00fff7] hover:text-white transition-colors duration-300">
+                <i className="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/HariomYadav18" target="_blank" rel="noopener noreferrer" className="text-[#00fff7] hover:text-white transition-colors duration-300">
+                <i className="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
         </form>
 
         {/* Social Icons */}

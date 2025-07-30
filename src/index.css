@@ -107,11 +107,17 @@ p {
 
 .text-secondary {
   color: #b3b3b3;
-}  transition: border-color 0.25s;
 }
+
+/* Add back the original button styles */
+button {
+  transition: border-color 0.25s;
+}
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;

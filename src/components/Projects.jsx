@@ -106,12 +106,6 @@ const Projects = () => {
                     {tech}
                   </span>
                 ))}
-                      className="px-2 py-1 text-sm bg-[#00fff7]/20 rounded-full text-white font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
           ))}

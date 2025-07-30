@@ -3,18 +3,18 @@ import React from "react";
 const aboutData = [
   {
     icon: "fas fa-user-astronaut",
-    title: "Who am I?",
-    desc: "A passionate developer with a futuristic vision, blending creativity and technology to build immersive digital experiences.",
+    title: "About Me",
+    desc: "I am Hariom Yadav from New Delhi, India. Currently, I am pursuing B.Tech in CSE from VIT Bhopal University. I am very passionate about learning programming and developing websites. I have created several projects using HTML, CSS, JavaScript and React to enhance my practical experience.",
   },
   {
-    icon: "fas fa-code-branch",
-    title: "Tech Stack",
-    desc: "React, JavaScript, Tailwind CSS, Node.js, and more. Always exploring new tech!",
+    icon: "fas fa-graduation-cap",
+    title: "Education",
+    desc: "B.Tech in CSE at VIT Bhopal University with CGPA: 8.66. Also completed Class 12th from Narayana Junior College with GPA: 7.78 and Class 10th from Delhi Public School, Bangalore North with GPA: 9.3.",
   },
   {
-    icon: "fas fa-rocket",
-    title: "Mission",
-    desc: "To create visually stunning, interactive, and user-friendly web applications that stand out.",
+    icon: "fas fa-trophy",
+    title: "Achievements",
+    desc: "Participated in multiple Hackathons where I gained valuable knowledge from other codebases and was rewarded with prize money and swags.",
   },
 ];
 

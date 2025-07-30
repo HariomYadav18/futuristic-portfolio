@@ -29,19 +29,37 @@ const Home = () => {
           <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#1e90ff]/80 text-[#232526] font-bold text-xs shadow-lg neon-glow-blue animate-bounce">Futuristic Dev</span>
         </div>
         <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg text-center tracking-tight animate-title-glow-blue">
-          <span className="block text-[#1e90ff]">Welcome</span> to the <span className="text-[#1e90ff]">Next-Gen</span> Portfolio
+          Hello <span className="wave"><i className="fa-solid fa-hand"></i></span>
         </h1>
+        <h2 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg text-center tracking-tight animate-fade-in">
+          I'm <span className="text-[#1e90ff]">Hariom Yadav</span>
+        </h2>
         <p className="text-lg md:text-2xl text-white/80 font-medium text-center max-w-xl animate-fade-in leading-relaxed">
-          Hi, I'm <span className="font-bold text-[#1e90ff]">Hariom Yadav</span>.<br />
-          I build <span className="font-bold text-[#1e90ff]">immersive</span>, <span className="font-bold text-[#1e90ff]">interactive</span> digital experiences.<br />
-          <span className="text-[#1e90ff] font-bold">Scroll or use the sidebar to explore!</span>
+          I am a Programmer and Developer <span className="text-type"></span>
         </p>
-        <div className="flex gap-6 mt-2">
-          <a href="https://www.instagram.com/_hariom_18/?hl=en" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#1e90ff] hover:text-white transition-colors duration-300 neon-glow-blue animate-social-float">
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/hariom-yadav-066548251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#1e90ff] hover:text-white transition-colors duration-300 neon-glow-blue animate-social-float">
-            <i className="fab fa-linkedin"></i>
+        <ul className="social-icons flex gap-6 mt-2">
+          <li>
+            <a href="https://www.instagram.com/_hariom_18/?hl=en" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#1e90ff] hover:text-white transition-colors duration-300 neon-glow-blue animate-social-float">
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/hariom-yadav-066548251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#1e90ff] hover:text-white transition-colors duration-300 neon-glow-blue animate-social-float">
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/HariomYadav18" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#1e90ff] hover:text-white transition-colors duration-300 neon-glow-blue animate-social-float">
+              <i className="fa-brands fa-github"></i>
+            </a>
+          </li>
+        </ul>
+        <div className="mt-4">
+          <a href="#projects" className="workLinkBtn">
+            <button className="myWorks-btn bg-[#1e90ff] hover:bg-[#1e90ff]/90 text-white px-6 py-3 rounded-full transition-colors duration-300 flex items-center gap-2">
+              My Works
+              <i className="fa-solid fa-arrow-right"></i>
+            </button>
           </a>
         </div>
       </div>

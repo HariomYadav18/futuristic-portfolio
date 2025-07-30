@@ -61,15 +61,16 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-[#232526] via-[#0f2027] to-[#2c5364] py-20 overflow-hidden">
-      {/* Animated Background */}
+    <section id="skills" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#121212] to-[#1e1e1e] py-20 overflow-hidden">
+      {/* Elegant Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 w-96 h-96 bg-[#00fff7]/20 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-0 right-1/3 w-80 h-80 bg-[#00fff7]/10 rounded-full blur-2xl animate-pulse-slow" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#121212] to-[#1e1e1e]" />
+        <div className="absolute top-1/4 left-1/2 w-96 h-96 bg-[#00fff7]/10 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-0 right-1/3 w-80 h-80 bg-[#1e90ff]/5 rounded-full blur-2xl animate-pulse-slow" />
       </div>
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto p-10 bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-[#00fff7]/30 neon-glow animate-float-up">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-10 tracking-wider neon-glow">
+      <div className="relative z-10 w-full max-w-4xl mx-auto p-10 bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 animate-fade-in">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-10 tracking-wider">
           <i className="fa-sharp fa-regular fa-file-code mr-2"></i>Skills
         </h2>
 
@@ -77,21 +78,19 @@ const Skills = () => {
           {skillsData.map((skill, idx) => (
             <div
               key={idx}
-              className="group relative p-6 bg-white/5 rounded-2xl border border-[#00fff7]/20 hover:bg-[#00fff7]/10 transition-all duration-300"
+              className="group relative p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-[#1e90ff]/10 transition-all duration-300 animate-fade-in"
             >
-              <div className="absolute right-0 top-0 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#00fff7]/20 rounded-full flex items-center justify-center">
-                <i className="fa-solid fa-star text-[#00fff7] text-sm group-hover:scale-125 transition-transform duration-300"></i>
+              <div className="absolute right-0 top-0 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
+                  className="w-8 h-8 object-contain"
+                />
               </div>
-
-              <img
-                src={skill.icon}
-                alt={skill.name}
-                className="w-16 h-16 mx-auto mb-4 rounded-lg shadow-lg hover:shadow-[0_0_32px_#00fff7] transition-shadow duration-300"
-              />
-              
-              <p className="text-xl font-semibold text-white text-center group-hover:text-[#00fff7] transition-colors duration-300">
-                {skill.name}
-              </p>
+              <h3 className="text-xl font-bold text-white mb-2">{skill.name}</h3>
+              <div className="h-0.5 w-full bg-white/10 mt-2">
+                <div className="h-full bg-[#1e90ff] transition-all duration-300" style={{ width: '100%' }} />
+              </div>
             </div>
           ))}
         </div>

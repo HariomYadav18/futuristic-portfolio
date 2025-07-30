@@ -23,39 +23,6 @@
   text-shadow: 0 0 10px rgba(0, 255, 247, 0.2);
 }
 
-/* Card styling */
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Smooth animations */
-.animate-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.animate-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Improved readability */
-.text-content {
-  color: #e0e0e0;
-  line-height: 1.8;
-  font-size: 1rem;
-}
-
 /* Project cards */
 .project-card {
   background: rgba(255, 255, 255, 0.03);

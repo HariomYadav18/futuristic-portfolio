@@ -3,62 +3,60 @@ import React from "react";
 const Home = () => {
   return (
     <section className="relative w-full py-16 px-4 overflow-visible">
-      {/* Animated 3D/Neon Background */}
+      {/* Elegant Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="450" cy="450" rx="350" ry="350" fill="#1e90ff" fillOpacity="0.12">
-            <animate attributeName="rx" values="350;370;350" dur="6s" repeatCount="indefinite" />
-            <animate attributeName="ry" values="350;370;350" dur="6s" repeatCount="indefinite" />
-          </ellipse>
-        </svg>
-        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-[#1e90ff]/30 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#1e90ff]/20 rounded-full blur-2xl animate-pulse-slow" />
-        <div className="absolute top-0 right-1/4 w-40 h-40 bg-[#1e90ff]/40 rounded-full blur-2xl animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#121212] to-[#1e1e1e]" />
+        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-[#1e90ff]/10 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#00fff7]/5 rounded-full blur-2xl animate-pulse-slow" />
+        <div className="absolute top-0 right-1/4 w-40 h-40 bg-[#1e90ff]/15 rounded-full blur-2xl animate-pulse" />
       </div>
-      {/* Holographic Avatar Card */}
-      <div className="relative z-10 flex flex-col items-center gap-8 p-10 bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-[#1e90ff]/40 neon-glow-blue animate-float-up w-full">
+      {/* Modern Card */}
+      <div className="relative z-10 flex flex-col items-center gap-8 p-10 bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 animate-fade-in w-full max-w-4xl">
         <div className="relative flex flex-col items-center">
-          <div className="w-44 h-44 rounded-full border-4 border-[#1e90ff] shadow-xl neon-glow-blue overflow-hidden bg-gradient-to-br from-[#1e90ff]/40 to-[#232526] animate-avatar-float">
+          <div className="w-44 h-44 rounded-full border-4 border-[#1e90ff] shadow-xl overflow-hidden bg-gradient-to-br from-[#1e90ff]/20 to-[#232526] animate-avatar-float">
             <img
               src="https://img.freepik.com/premium-photo/portrait-successful-programmer-game-developer-coder-guy-uses-computer-laptop-work-game-design-hacker-boy-generative-ai-cyber-gamer_117038-7597.jpg?w=740"
               alt="Avatar"
               className="w-full h-full object-cover opacity-90"
             />
-            <div className="absolute inset-0 rounded-full border-2 border-[#1e90ff]/60 animate-avatar-glow" />
+            <div className="absolute inset-0 rounded-full border-2 border-[#1e90ff]/30 animate-avatar-glow" />
           </div>
-          <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#1e90ff]/80 text-[#232526] font-bold text-xs shadow-lg neon-glow-blue animate-bounce">Futuristic Dev</span>
+          <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#1e90ff]/30 text-[#232526] font-bold text-xs shadow-lg animate-bounce">Developer</span>
         </div>
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg text-center tracking-tight animate-title-glow-blue">
+        <h1 className="text-4xl md:text-6xl font-extrabold text-white text-center tracking-tight mb-2">
           Hello <span className="wave"><i className="fa-solid fa-hand"></i></span>
         </h1>
-        <h2 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg text-center tracking-tight animate-fade-in">
+        <h2 className="text-3xl md:text-5xl font-bold text-white text-center tracking-tight mb-4">
           I'm <span className="text-[#1e90ff]">Hariom Yadav</span>
         </h2>
-        <p className="text-lg md:text-2xl text-white/80 font-medium text-center max-w-xl animate-fade-in leading-relaxed">
+        <p className="text-lg md:text-2xl text-white/80 font-medium text-center max-w-2xl mb-6 leading-relaxed">
           I am a Programmer and Developer <span className="text-type"></span>
         </p>
-        <ul className="social-icons flex gap-6 mt-2">
+        <ul className="social-icons flex gap-6 mt-2 mb-6">
           <li>
-            <a href="https://www.instagram.com/_hariom_18/?hl=en" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#1e90ff] hover:text-white transition-colors duration-300 neon-glow-blue animate-social-float">
+            <a href="https://www.instagram.com/_hariom_18/?hl=en" target="_blank" rel="noopener noreferrer" className="text-2xl text-white/80 hover:text-white transition-colors duration-300 flex items-center gap-2">
               <i className="fa-brands fa-instagram"></i>
+              <span className="sr-only">Instagram</span>
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/hariom-yadav-066548251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#1e90ff] hover:text-white transition-colors duration-300 neon-glow-blue animate-social-float">
+            <a href="https://www.linkedin.com/in/hariom-yadav-066548251" target="_blank" rel="noopener noreferrer" className="text-2xl text-white/80 hover:text-white transition-colors duration-300 flex items-center gap-2">
               <i className="fa-brands fa-linkedin"></i>
+              <span className="sr-only">LinkedIn</span>
             </a>
           </li>
           <li>
-            <a href="https://github.com/HariomYadav18" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#1e90ff] hover:text-white transition-colors duration-300 neon-glow-blue animate-social-float">
+            <a href="https://github.com/HariomYadav18" target="_blank" rel="noopener noreferrer" className="text-2xl text-white/80 hover:text-white transition-colors duration-300 flex items-center gap-2">
               <i className="fa-brands fa-github"></i>
+              <span className="sr-only">GitHub</span>
             </a>
           </li>
         </ul>
         <div className="mt-4">
           <a href="#projects" className="workLinkBtn">
-            <button className="myWorks-btn bg-[#1e90ff] hover:bg-[#1e90ff]/90 text-white px-6 py-3 rounded-full transition-colors duration-300 flex items-center gap-2">
-              My Works
-              <i className="fa-solid fa-arrow-right"></i>
+            <button className="bg-[#1e90ff] hover:bg-[#1e90ff]/90 text-white px-6 py-3 rounded-full transition-colors duration-300 flex items-center gap-2">
+              Explore My Work
+              <i className="fa-solid fa-arrow-right ml-2"></i>
             </button>
           </a>
         </div>

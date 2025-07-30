@@ -34,12 +34,12 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link, idx) => (
               <a
-                key={link.id}
+                key={link.name}
                 href={link.href}
                 className={`text-white/80 hover:text-white transition-colors duration-300 font-medium px-3 py-2 rounded-lg ${
-                  currentSection === link.id ? 'text-white bg-white/10' : ''
+                  currentSection === link.name ? 'text-white bg-white/10' : ''
                 }`}
-                onClick={() => setCurrentSection(link.id)}
+                onClick={() => setCurrentSection(link.name)}
               >
                 {link.name}
               </a>
@@ -70,14 +70,14 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navLinks.map((link, idx) => (
               <a
-                key={link.id}
+                key={link.name}
                 href={link.href}
                 className={`block text-white/80 hover:text-white transition-colors duration-300 font-medium px-3 py-2 rounded-lg ${
-                  currentSection === link.id ? 'text-white bg-white/10' : ''
+                  currentSection === link.name ? 'text-white bg-white/10' : ''
                 }`}
                 onClick={() => {
                   toggleMobileMenu();
-                  setCurrentSection(link.id);
+                  setCurrentSection(link.name);
                 }}
               >
                 {link.name}
@@ -85,12 +85,6 @@ const Navbar = () => {
             ))}
           </div>
         </div>
-            className="hover:text-[#00fff7] hover:scale-110 transition-all duration-300"
-            onClick={() => setMenuOpen(false)}
-          >
-            {link.name}
-          </a>
-        ))}
       </div>
       <style>{`
         @keyframes fade-in-down {
